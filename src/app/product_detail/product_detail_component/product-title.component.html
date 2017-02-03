@@ -1,0 +1,14 @@
+<br/>
+<div class="row" ng-controller="categoryCtrl">
+	<div class="col m8">
+		<h5 style="font-weight:bold">{{category}}</h5>	
+	</div>
+	<div class="col m4">
+		<label>Browser Select</label>
+		<select class="browser-default">
+			<option value="" disabled selected>Choose Category option</option>
+			<option *ngFor="let main_category of main_categories">  {{main_category.name}} </option>
+		</select>
+	</div>
+</div>
+<div class="divider"></div>

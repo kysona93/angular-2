@@ -1,0 +1,44 @@
+<div id="emst" class="col m12">
+	<br/><br/> 
+	<div class="row">  
+		<div class="col m12">
+			<form novalidate [formGroup]="emailForm" (submit)="changeEmail()">   
+				<div class="row">
+					
+					<div class="input-field col m12">
+						<label>New Email Adress</label><br/>
+						<input formControlName="new_email" type="email" class="validate" required>
+						
+						<div *ngIf="emailForm.controls.new_email.errors">
+							<small style="color:red;">Required *</small>
+						</div>
+						<div *ngIf="emailForm.controls.new_email.pattern">
+							<small style="color:red;">invalid email!</small>
+						</div>
+						
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col m12">
+						<label>Confirm Password</label><br/>
+						<input formControlName="confirm_password" type="password" class="validate" required >
+						
+						<div *ngIf="emailForm.controls.confirm_password.errors">
+							<small style="color:red;">Required *</small>
+						</div>
+						<div *ngIf="emailForm.controls.confirm_password.pattern">
+							<small style="color:red;">password must be at least 6 up to 40 characters and include at least one character and one digit!</small>
+						</div>
+						
+					</div>
+				</div>
+				<div class="row">
+					<div class="col m12">
+						<button type="submit" [disabled]="!emailForm.valid" class="waves-effect waves-light btn" [ngClass]="{'btn-red': !emailForm.valid }" >save change</button>&nbsp;&nbsp;
+						<button (click)="cancel()" class="waves-effect waves-light btn orange">cancel</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

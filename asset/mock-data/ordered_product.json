@@ -1,0 +1,6 @@
+[
+    {"id":1, "code":"p0001","name":"coca cola","qty":10, "price":0.90 },
+    {"id":2, "code":"p0002","name":"sprite","qty":10, "price":0.85 },
+    {"id":3, "code":"p0003","name":"fanta","qty":10, "price":0.80 },
+    {"id":4, "code":"p0004","name":"pepsi","qty":10, "price":0.95 }
+]

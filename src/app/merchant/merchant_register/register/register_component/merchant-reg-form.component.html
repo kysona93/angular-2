@@ -1,0 +1,151 @@
+<div class="row">
+            <div class="col m12">
+                  <h5>Submit a deal for review</h5>
+                  <p>Fill out the form below to get started. Don't worry! We'll contact you and give you a chance to update your
+                     item details before launching your deal.
+                  </p>
+            </div>
+      </div>
+
+      <div class="row">
+        <div class="col m12">
+          <form novalidate [formGroup]="registerForm" (submit)="doRegister()">
+            <div class="row">
+              <div class="input-field col m6">
+                <label>What item would you like to sell?</label> <br/>
+                <input formControlName="item_name" type="text" class="validate">
+                
+                  <div *ngIf="registerForm.controls.item_name.errors" ><small style="color:red">Required *</small></div>
+                  <div *ngIf="registerForm.controls.item_name.pattern" >
+                    <small style="color:red">item name can be only characters and numerics.</small>
+                  </div>
+                
+              </div>
+              <div class="input-field col m6">
+                  <label>How many units do you have available to sell on Macrocoupon?</label> <br/>
+                  <input formControlName="item_unit" type="text" class="validate">
+                 
+                  <div *ngIf="registerForm.controls.item_unit.errors" ><small style="color:red">Required *</small></div>
+                  <div *ngIf="registerForm.controls.item_unit.pattern" >
+                    <small style="color:red">item unit can be only characters and numerics.</small>
+                  </div>
+                  
+              </div>
+            </div>
+            <div class="row">
+                    <div class="input-field col m6">
+                      <label for="first_name">First Name</label> <br/>
+                      <input formControlName="firstname" type="text" class="validate">
+                      
+                        <div *ngIf="registerForm.controls.firstname.errors" ><small style="color:red">Required *</small></div>
+                        <div *ngIf="registerForm.controls.firstname.pattern" >
+                          <small style="color:red">firstname can be only characters.</small>
+                        </div>
+                      
+                    </div>
+                    <div class="input-field col m6">
+                        <label for="first_name">Last Name</label> <br/>
+                        <input formControlName="lastname" type="text" class="validate">
+                        
+                        <div *ngIf="registerForm.controls.lastname.errors" ><small style="color:red">Required *</small></div>
+                        <div *ngIf="registerForm.controls.lastname.pattern" >
+                          <small style="color:red">lastname can be only characters.</small>
+                        </div>
+                      
+                    </div> 
+            </div>
+            <div class="row">
+                    <div class="input-field col m6">
+                      <label for="first_name">Email</label> <br/>
+                      <input formControlName="email" type="email" class="validate">
+                      
+                        <div *ngIf="registerForm.controls.email.errors" ><small style="color:red">Required *</small></div>
+                        <div *ngIf="registerForm.controls.email.pattern" >
+                          <small style="color:red">invalid email.</small>
+                        </div>
+                     
+                    </div>
+                    <div class="input-field col m6">
+                        <label for="first_name">Phone Number</label> <br/>
+                        <input formControlName="phone_number" type="text" class="validate">
+                      
+                        <div *ngIf="registerForm.controls.phone_number.errors" ><small style="color:red">Required *</small></div>
+                        <div *ngIf="registerForm.controls.phone_number.pattern" >
+                          <small style="color:red">invalid phone number.</small>
+                        </div>
+                      
+                    </div>
+            </div>
+            <div class="row">
+                    <div class="input-field col m6">
+                      <select class="browser-default" formControlName="storefront">
+                        <option value="" disabled selected>Do you have a retail storefront?</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                      </select>
+                    </div>
+                    <div class="input-field col m6"></div>
+            </div>
+            <div class="row">
+                    <div class="input-field col m6">
+                      <label for="first_name">Street No</label> <br/>
+                      <input formControlName="streetno" type="text" class="validate">
+                      
+                        <div *ngIf="registerForm.controls.streetno.errors" ><small style="color:red">Required *</small></div>
+                        <div *ngIf="registerForm.controls.streetno.pattern" >
+                          <small style="color:red">street no can be only letter and numbers</small>
+                        </div>
+                      
+                    </div>
+                    <div class="input-field col m6">
+                        <label for="first_name">City</label> <br/>
+                        <input formControlName="city" type="text" class="validate">
+                       
+                        <div *ngIf="registerForm.controls.city.errors" ><small style="color:red">Required *</small></div>
+                        <div *ngIf="registerForm.controls.city.pattern" >
+                          <small style="color:red">city name can be only characters and numerics</small>
+                        </div>
+                      
+                    </div>
+            </div>
+            <div class="row">
+                    <div class="input-field col m6">
+                      <label for="first_name">State/Province/Region</label> <br/>
+                      <input formControlName="province" type="text" class="validate">
+                    
+                        <div *ngIf="registerForm.controls.province.errors" ><small style="color:red">Required *</small></div>
+                        <div *ngIf="registerForm.controls.province.pattern" >
+                          <small style="color:red">province name can be only letter and numbers</small>
+                        </div>
+                      
+                    </div>
+                    <div class="input-field col m6">
+                        <label for="first_name">Postal/ Zip Code</label> <br/>
+                        <input formControlName="zipcode" type="text" class="validate">
+                        
+                        <div *ngIf="registerForm.controls.zipcode.errors" ><small style="color:red">Required *</small></div>
+                        <div *ngIf="registerForm.controls.zipcode.pattern" >
+                          <small style="color:red">zipcode can be only numerics.</small>
+                        </div>
+                     
+                    </div>
+            </div>
+            <div class="row"> 
+                    <div class="input-field col m6">
+                      <label for="first_name">Your Website</label> <br/>
+                      <input formControlName="website" type="text" class="validate">
+                     
+                        <div *ngIf="registerForm.controls.website.errors" ><small style="color:red">Required *</small></div>
+                        <div *ngIf="registerForm.controls.website.pattern" >
+                          <small style="color:red">invalid website</small>
+                        </div>
+                     
+                    </div>
+                    <div class="input-field col m6"></div>
+            </div>
+            <div>
+              <button [disabled]="!registerForm.valid" [ngClass]="{'btn-red': !registerForm.valid }" class="waves-effect waves-light btn">submit</button> &nbsp;&nbsp;
+            </div>
+          </form>
+        </div>
+      </div>

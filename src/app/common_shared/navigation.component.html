@@ -1,0 +1,66 @@
+<div class="navbar-fixed">
+    <nav style="height:50px">   
+    <div class="nav-wrapper">
+      <a href="index.html" class="brand-logo" style="height:50px;margin-top:-8px;">MACROCOUPON</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down nav-menu" style="float:right;margin-top:-8px;height:58px;">
+        <li><a href="#" routerLink="/user/cart-list"><i class="fa fa-shopping-basket" aria-hidden="true">&nbsp;&nbsp;Cart</i></a></li>
+        <li><a href="#" routerLink="/help">Help</a></li> 
+        <li><a [hidden]="usertype != 'user' " class="dropdown-button" href="#!" data-activates="user1">{{username}}<i class="material-icons right" style="margin-left:-5px;">arrow_drop_down</i></a></li>
+        <li><a [hidden]="usertype != 'merchant' " class="dropdown-button" href="#!" data-activates="merchant1">{{username}}<i class="material-icons right" style="margin-left:-5px;">arrow_drop_down</i></a></li>
+        <li><a [hidden]="usertype != 'admin' " class="dropdown-button" href="#!" data-activates="admin1">{{username}}<i class="material-icons right" style="margin-left:-5px;">arrow_drop_down</i></a></li> 
+        <li><a [hidden]="usertype != null " href="#" routerLink="/signin">Sign in</a></li>
+        <li><a [hidden]="usertype != null " href="#" routerLink="/signup">Sign up</a></li>
+        <li><a routerLink="/about-us">About us</a></li>
+      </ul>
+      <!-- Mobile Structure --> 
+      <ul class="side-nav" id="mobile-demo">
+        <li><i class="#">insert_chart</i><a href="#" routerLink="/user/cart-list">Cart</a></li>
+        <li><a href="#" routerLink="/help">Help</a></li>
+        <li [hidden]="usertype != 'user' "><a class="dropdown-button" href="#!" data-activates="user2">{{username}}<i class="material-icons right" style="margin-left:-5px;">arrow_drop_down</i></a></li>
+        <li [hidden]="usertype != 'merchant' "><a class="dropdown-button" href="#!" data-activates="merchant2">{{username}}<i class="material-icons right" style="margin-left:-5px;">arrow_drop_down</i></a></li>
+        <li [hidden]="usertype != 'admin' "><a class="dropdown-button" href="#!" data-activates="admin2">{{username}}<i class="material-icons right" style="margin-left:-5px;">arrow_drop_down</i></a></li>
+        <li [hidden]="usertype != null "><a href="#" routerLink="/signin">Sign in</a></li>
+        <li [hidden]="usertype != null "><a href="#" routerLink="/signup">Sign up</a></li>
+        <li><a routerLink="/about-us">About us</a></li>
+        </ul>
+    </div> 
+    </nav>
+    <!-- Dropdown User -->
+     <ul id="user1" class="dropdown-content">
+        <li [hidden]="usertype != 'user'"><a href="#" routerLink="/user/account-setting" >Profile</a></li>
+        <li class="divider"></li>
+        <li [hidden]="usertype != 'user'"><a  href="#" (click)="logOut()">Sign Out</a></li>
+      </ul> 
+      <ul id="user2" class="dropdown-content">
+        <li [hidden]="usertype != 'user'"><a  href="#" routerLink="/user/account-setting" >Profile</a></li>
+        <li class="divider"></li>
+        <li [hidden]="usertype != 'user'"><a href="#" (click)="logOut()">Sign Out</a></li>
+      </ul>
+      <!-- Dropdown Merchant -->
+      <ul id="merchant1" class="dropdown-content">
+        <li [hidden]="usertype != 'merchant'"><a  href="#" routerLink="/merchant/dashboard" >Dashboard</a></li>
+        <!--<li [hidden]="usertype != 'merchant'"><a  href="#" routerLink="/merchant/account-setting" >Profile</a></li>-->
+        <li class="divider"></li>
+        <li [hidden]="usertype != 'merchant'"><a  href="#" (click)="logOut()">Sign Out</a></li>
+      </ul> 
+      <ul id="merchant2" class="dropdown-content">
+        <li [hidden]="usertype != 'merchant'"><a  href="#" routerLink="/merchant/dashboard" >Dashboard</a></li>
+        <!--<li [hidden]="usertype != 'merchant'"><a  href="#" routerLink="/merchant/account-setting" >Profile</a></li>-->
+        <li class="divider"></li>
+        <li [hidden]="usertype != 'merchant'"><a  href="#" (click)="logOut()">Sign Out</a></li>
+      </ul> 
+      <!-- Dropdown Admin -->
+      <ul id="admin1" class="dropdown-content">
+        <li [hidden]="usertype != 'admin'"><a href="#" routerLink="/admin" >Dashboard</a></li>
+        <!--<li [hidden]="usertype != 'admin'"><a href="#" routerLink="/admin/account-setting" >Profile</a></li>-->
+        <li class="divider"></li>
+        <li [hidden]="usertype != 'admin'" ><a href="#" (click)="logOut()">Sign Out</a></li>
+      </ul> 
+      <ul id="admin2" class="dropdown-content">
+        <li [hidden]="usertype != 'admin'" ><a href="#" routerLink="/admin" >Dashboard</a></li>
+        <!--<li [hidden]="usertype != 'admin'" ><a href="#" routerLink="/admin/account-setting" >Profile</a></li>-->
+        <li class="divider"></li>
+        <li [hidden]="usertype != 'admin'" ><a href="#" (click)="logOut()">Sign Out</a></li>
+      </ul> 
+  </div>

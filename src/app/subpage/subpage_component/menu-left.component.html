@@ -1,0 +1,58 @@
+<!-- Menu Left -->
+<div class="col m3" ng-controller="search_path_Ctrl"> <br/>
+	<!-- Google Map -->
+					<!-- <b><i class="fa fa-map-marker" aria-hidden="true" style="color:#fbb602"></i>&nbsp;Find by Map</b>
+					<br/>
+					<div class="divider"></div>
+					<div style='overflow: hidden; height: 230px; width: 230px;'>
+						<div id='gmap_canvas' style='height: 230px; width: 230px;'></div>
+						<div>
+							<small><a href="http://embedgooglemaps.com"> embed google maps </a></small>
+						</div>
+						<div>
+							<small><a href="https:/disclaimergenerator.net">disclaimer example</a></small>
+						</div>
+					</div>
+					<br/> -->
+					<!-- Interest Menus -->
+					<b><i class="fa fa-bookmark" aria-hidden="true" style="color:#fbb602"></i>&nbsp;{{interested_category}}</b>
+					<div class="divider"></div>
+					<div class="collection menu-left">
+						<a  *ngFor="let interested_category of interested_categories" href="#" class="collection-item"> {{interested_category.title}} 
+							<span class="badge green searching">{{interested_category.amount}}</span></a>
+						</div>
+						<!-- Finde by Price -->
+						<br/>
+						<b><i class="fa fa-money" aria-hidden="true" style="color:#fbb602"></i>&nbsp; Price Range</b>
+						<div class="divider"></div>
+						<div class="row">
+							<div class="input-field col m4">
+								<input placeholder="$ min" id="first_name" type="text" class="validate">
+							</div>
+							<div class="input-field col m4">
+								<input placeholder="$ max" id="first_name" type="text" class="validate">
+							</div>
+							<div class="col m4">
+								<br/>
+								<a class="btn-floating orange" ><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+							</div>
+						</div>
+						<br/>
+						<!-- Category -->
+						<br/>
+						<b><i class="fa fa-list-alt" aria-hidden="true" style="color:#fbb602"></i>&nbsp;{{category}}</b>
+						<div class="divider"></div>
+						<div class="collection menu-left">
+							<a *ngFor="let category of categories" href="#" class="collection-item">{{category.name}} 
+								<span class="badge green searching">{{category.amount}}</span></a>
+							</div>
+							<!-- Location -->
+							<br/>
+							<b><i class="fa fa-home" aria-hidden="true" style="color:#fbb602"></i>&nbsp;{{location}} </b>
+							<div class="divider"></div>
+							<div class="collection menu-left">
+								<a *ngFor="let location_shop of location_shops" href="#" class="collection-item">{{location_shop.name}} 
+									<span class="badge green searching" >{{location_shop.amount}} </span>
+								</a>
+							</div>
+						</div>

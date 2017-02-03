@@ -1,0 +1,25 @@
+<!-- Searching area -->
+<div class="container">
+	<br/>
+	<div class="row">
+		<div class="col m1">.</div>
+		<div class="col m11" (mouseleave)="leaveSearch()">
+			<div class="input-field col m12">
+				<i class="material-icons prefix">search</i>
+				<input (keyup)="pressSearch($event)" 
+				[(ngModel)]="text_search"
+				(mouseover)="overSearch()" 
+				type="text" class="validate">
+				<label for="icon_prefix">&nbsp;&nbsp;&nbsp;&nbsp;Search for coupon ....</label>
+				<div class="box-shadow-search" id="showed"
+				[class.filter-area]="isFilter">
+				<ul *ngFor="let item of items" class="filter-link">
+					<li><a href="#" routerLink="/products/product">{{item.name}}</a></li> 
+				</ul>
+			</div> 
+		</div>
+	</div> 
+</div> 
+</div>
+<!-- ./Searching area -->
+<br/>

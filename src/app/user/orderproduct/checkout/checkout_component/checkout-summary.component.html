@@ -1,0 +1,11 @@
+<div class="col m4">
+	<ul class="collection with-header" style="font-size:9pt;">
+		<li class="collection-header" style="background-color:#4c99af;"><h6>Order Summary</h6></li>
+		<li *ngFor="let pro of products"  class="collection-item"><div>{{pro.name}}<a href="" class="secondary-content">$ {{pro.price * pro.qty}}</a></div></li>
+	</ul> 
+	<br/>
+	<div style="float:right;color:red;font-weight:bold;">
+		<span>Total: </span>
+		<span>$ {{total}}</span>
+	</div>
+</div>

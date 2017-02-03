@@ -1,0 +1,78 @@
+<!-- advertise products -->
+<div ng-controller="advertise_path1_Ctrl">
+	<div class="row">
+		<div class="col m3" *ngFor="let advertise of advertises">
+			<div class="card small hoverable">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" src="http://placehold.it/200x200">
+				</div>
+				<div class="card-content">
+					<span class="card-title activator grey-text text-darken-4">{{advertise.title}}<i class="material-icons right">more_vert</i></span>
+					<div>
+						<p><i class="fa fa-home" aria-hidden="true"></i>&nbsp;{{advertise.location}} </p>
+					</div>
+					<div>
+						<p class="sale-end"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;{{advertise.date}}</p><br/>
+						<!--<a href="#" [routerLink]="['products/product',{id:advertise.pro_id}]">-->
+						<a href="#" routerLink="/products/product">
+							<span style="color:orange">{{advertise.discount}}</span>
+							<span class="position-right">
+								<s class="price">$ 100</s>&nbsp;&nbsp;
+								<span style="color:green; font-weight:bold">{{advertise.price}}</span>
+							</span>
+						</a>
+					</div>
+				</div>
+				<div class="card-reveal">
+					<span class="card-title grey-text text-darken-4">Blance & Eclare<i class="material-icons right">close</i></span>
+					<p>Hurry up! Get 50% off from 1st July until 15st August form all products Blance & Eclare. See ya soon.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Advertise Product Space -->
+<div class="row">
+	<div class="col m12">
+		<img style="width:100%" src="http://placehold.it/920x200"/>
+	</div>
+</div>
+<!-- path 2 advertise products -->
+<div>
+	<div class="row">
+		<div class="col m3" *ngFor="let advertise of advertises">
+			<div class="card small hoverable">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" src="http://placehold.it/200x200">
+				</div>
+				<div class="card-content">
+					<span class="card-title activator grey-text text-darken-4">{{advertise.title}}<i class="material-icons right">more_vert</i></span>
+					<div>
+						<p><i class="fa fa-home" aria-hidden="true"></i>&nbsp;{{advertise.location}} </p>
+					</div>
+					<div>
+						<p class="sale-end"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;{{advertise.date}}</p><br/>
+						<a href="#" routerLink="/products/product">
+							<span style="color:orange">{{advertise.discount}}</span>
+							<span class="position-right">
+								<s class="price">$ 100</s>&nbsp;&nbsp;
+								<span style="color:green; font-weight:bold">{{advertise.price}}</span>
+							</span>
+						</a>
+					</div>
+				</div>
+				<div class="card-reveal">
+					<span class="card-title grey-text text-darken-4">Blance & Eclare<i class="material-icons right">close</i></span>
+					<p>Hurry up! Get 50% off from 1st July until 15st August form all products Blance & Eclare. See ya soon.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> 
+
+<!-- view all deals -->
+<div class="row">
+	<div calss="col m12" style="margin-left:40%">
+		<a class="waves-effect waves-light btn">View All Deals</a>
+	</div>
+</div> 

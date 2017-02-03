@@ -1,0 +1,132 @@
+<!-- Product Picture -->
+<div class="col m8"> <br/>
+	<div class="row">
+		<div class="col m12">
+			<img class="responsive-img" [src]="cur_pic">
+		</div> 
+	</div> 
+	<div class="row">
+		<form>
+			<div class="col m2" *ngFor="let pro_pic of product_pics">
+				<img class="responsive-img" (click)="showImage()" src="{{pro_pic.name}}">
+			</div>
+		</form>
+	</div> 
+	<!-- <div class="col m2"><img class="responsive-img" src="http://placehold.it/100x110"></div> -->
+	<!-- Like Button -->
+	<div>
+		<a class="waves-effect waves-light btn" style="background-color:#e91e63">
+			<i class="material-icons left" style="color:white">thumb_up</i>LIKE
+		</a> &nbsp;
+		<a class="waves-effect waves-light btn" style="background-color:#53a318">
+			<i class="material-icons left" style="color:white">redeem</i>SEND AS A GIFT
+		</a>
+	</div>
+	<br/><br/>
+	<!-- Rate stars product -->
+	<div style="color:#f9a825">
+		<i class="material-icons">star</i>
+		<i class="material-icons">star</i>
+		<i class="material-icons">star</i>
+		<i class="material-icons">star</i>
+		<i class="material-icons">star</i> 
+		<span style="color:red"> 28 Ratings </span>
+	</div>
+	<br/>
+	<!-- Detail product information -->
+	<div><h5>{{product_detail?.name}}</h5></div>
+	<div>
+		<ul class="product-detail" 
+		*ngFor="let desc of product_detail?.description">
+		<li >{{desc?.detail}} </li>
+	</ul>
+</div>
+<br/>
+<!-- Ask question blog -->
+<div >
+	<a class="waves-effect waves-light btn" style="background-color:#367806">
+		<i class="material-icons left">loyalty</i>ASK QUESTION
+	</a>
+</div>
+
+</div>
+<!-- Product Desc --> 
+
+<div class="col m4">
+	<div>
+		<h5 style="color:purple;font-weight:bold;">	{{product_sell?.name}}  </h5>
+	</div>
+	<div>
+		<h6 style="color:#e35205">{{product_sell?.description}} </h6>
+	</div>
+	<div>
+		<p><i class="fa fa-home" aria-hidden="true"></i>&nbsp; {{product_sell?.location}}</p>
+	</div> 
+
+	<div class="divider"></div><br/>
+	<div class="responsive-table">
+		<table> 
+			<tbody>
+				<tr> 
+					<td>Price:</td>
+					<td><s style="color:red">  {{product_sell?.original_price}}</s></td>
+				</tr>
+				<tr>
+					<td>Discount:</td>
+					<td style="color:#e35205">{{product_sell?.discount}}</td>
+				</tr>
+				<tr>
+					<td>Sale Price:</td>
+					<td> {{product_sell?.sale_price}} </td>
+				</tr>
+				<tr>
+					<td>Brand:</td>
+					<td>{{product_sell?.brand}}  </td>
+				</tr>
+				<tr>
+					<td>Code:</td>
+					<td>{{product_sell?.code}}  </td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="divider"></div><br/>
+	<div style="font-size:10pt">
+		<a class="waves-effect waves-light btn">BUY NOW</a>&nbsp;
+		<button (click)="addToCart()" class="waves-effect waves-light btn" style="background-color:#ffa000">ADD TO CART</button> <br/><br/>
+		<a class="waves-effect waves-light btn" style="background-color:#367806">GET COUPON CODE</a>
+	</div>
+	
+	<br/>
+	<div class="divider"></div><br/>
+	<div>
+		<h6 style="color:red;font-weight:bold;"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp; Deadline :</h6>
+		<h6> 01-August-2016</h6>
+	</div>
+	
+	<br/>
+	<div class="divider"></div>
+	<div>
+		<h6 style="color:#0093ea;font-weight:bold;">Limit Quantity Available</h6>
+		<h6><i class="fa fa-users" aria-hidden="true"></i> &nbsp; {{product_sell?.quantity}}   bought</h6>
+	</div>
+	
+	<br/> 
+	<div class="divider"></div>
+	<div>
+		<h5 style="color:purple;font-weight:bold;"> {{product_sell?.name}} </h5>
+		<p>
+			{{product_sell?.detail}}
+		</p>
+	</div>
+	<br/>
+	<!-- Share and Google Map -->
+	<div>
+		<h6>Share this deal:</h6>	
+		<span><a href="#"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a></span>&nbsp;
+		<span><a href="#"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a></span>&nbsp;
+		<span><a href="#"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a></span>&nbsp;
+	</div>
+	<br/>
+</div>

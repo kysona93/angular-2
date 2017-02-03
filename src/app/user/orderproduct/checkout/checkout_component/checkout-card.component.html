@@ -1,0 +1,129 @@
+<div class="col m8">
+	<div class="row">
+		<form novalidate [formGroup]="checkoutForm" (submit)="checkout()">
+			<div class="row">
+				<div class="input-field col m6">
+					<label>Name on Card</label> <br/>
+					<input formControlName="name_card" type="text" class="validate">
+					
+					<div *ngIf="checkoutForm.controls.name_card.errors" >
+						<small style="color:red">Required *</small>
+					</div>
+					<div *ngIf="checkoutForm.controls.name_card.pattern" >
+						<small style="color:red">name card must be numeric or characters only!</small>
+					</div>
+					
+				</div>
+				<div class="input-field col m6">
+					<label>Card Number</label><br/>
+					<input formControlName="number_card" type="text" class="validate">
+					
+					<div *ngIf="checkoutForm.controls.number_card.errors" >
+						<small style="color:red">Required *</small>
+					</div>
+					<div *ngIf="checkoutForm.controls.number_card.pattern" >
+						<small style="color:red">card number must be only numeric!</small>
+					</div>
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col m6">
+					<label>Expired Date</label><br/>
+					<input formControlName="exp_date" type="date" class="datepicker">
+					
+					<div *ngIf="checkoutForm.controls.exp_date.errors" >
+						<small style="color:red">Required *</small>
+					</div>
+					
+				</div>
+				<div class="input-field col m6">
+					<label>Security Code</label><br/>
+					<input formControlName="sec_code" type="text" class="validate">
+
+					<div *ngIf="checkoutForm.controls.sec_code.errors">
+						<small style="color:red">Required *</small>
+					</div>
+					<div *ngIf="checkoutForm.controls.sec_code.pattern" >
+						<small style="color:red">Security code must be only numeric or characters!</small>
+					</div>
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col m12">
+					<label>Billing Address</label><br/>
+					<input formControlName="bill_addr" type="text" class="validate">
+					
+					<div *ngIf="checkoutForm.controls.bill_addr.errors" >
+						<small style="color:red">Required *</small>
+					</div>
+					<div *ngIf="checkoutForm.controls.bill_addr.pattern" >
+						<small style="color:red">Billing address must be only numeric or characters!</small>
+					</div>
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col m12">
+					<label>City</label><br/>
+					<input formControlName="city" type="text" class="validate">
+					
+					<div *ngIf="checkoutForm.controls.city.errors" >
+						<small style="color:red">Required *</small>
+					</div>
+					<div *ngIf="checkoutForm.controls.city.pattern" >
+						<small style="color:red">City name must be only numeric or characters!</small>
+					</div>
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col m6">
+					<select formControlName="province" class="browser-default">
+						<option value="" disabled selected>State/Province</option>
+						<option value="takeo">Takeo</option>
+						<option value="svayreang">Svayreang</option>
+						<option value="kandal">Kandal</option>
+					</select>
+					
+					<div *ngIf="checkoutForm.controls.province.errors" >
+						<small style="color:red">Required *</small>
+					</div>
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col m12">
+					<label>Postal Code</label><br/>
+					<input formControlName="postal_code" type="text" class="validate">
+					
+					<div *ngIf="checkoutForm.controls.postal_code.errors" >
+						<small style="color:red">Required *</small>
+					</div>
+					<div *ngIf="checkoutForm.controls.postal_code.pattern" >
+						<small style="color:red">Security code must be only numeric and characters!</small>
+					</div>
+					
+				</div>
+			</div>
+			<div>
+				<button type="submit" [disabled]="!checkoutForm.valid" [ngClass]="{'btn-red': !checkoutForm.valid }" class="waves-effect waves-light btn">Submit</button>&nbsp;&nbsp;
+				<a [routerLink]="['/user/cart-list']" class="waves-effect waves-light btn orange">Cancel</a>
+			</div>
+		</form>
+	</div>
+</div>
+
+<!-- summary ordered product -->
+<div class="col m4">
+	<ul class="collection with-header" style="font-size:9pt;">
+		<li class="collection-header" style="background-color:#4c99af;"><h6>Order Summary</h6></li>
+		<li *ngFor="let pro of products"  class="collection-item"><div>{{pro.name}}<a href="" class="secondary-content">$ {{pro.price * pro.qty}}</a></div></li>
+	</ul> 
+	<br/>
+	<div style="float:right;color:red;font-weight:bold;">
+		<span>Total: </span>
+		<span>$ {{total}} </span>
+	</div>
+</div>

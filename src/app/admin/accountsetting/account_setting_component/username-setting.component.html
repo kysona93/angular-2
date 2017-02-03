@@ -1,0 +1,57 @@
+<div id="accst" class="col m12">
+	<br/><br/> 
+	<div class="row">
+		<div class="col m12">
+			<form novalidate [formGroup]="usernameForm" (submit)="changeUsername()">
+				<div class="row">
+					<div class="input-field col m12">
+						<label>First Name</label> <br/>
+						<input formControlName="firstname" type="text" class="validate" required>					
+						
+						<div *ngIf="usernameForm.controls.firstname.errors" >
+							<small style="color:red">Required *</small> 
+						</div>
+						<div *ngIf="usernameForm.controls.firstname.pattern" >
+							<small style="color:red">first name can be only characters and at least 2 up to 40 charactors!</small>
+						</div>
+						
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col m12">
+						<label>Last Name</label> <br/>
+						<input formControlName="lastname" type="text" class="validate" required>						
+						
+						<div *ngIf="usernameForm.controls.lastname.errors" >
+							<small style="color:red">Required *</small> 
+						</div>
+						<div *ngIf="usernameForm.controls.lastname.errors.pattern" >
+							<small style="color:red">last name can be only characters and at least 2 up to 40 charactors!</small>
+						</div>
+						
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col m12">
+						<label>Confirm Password</label><br/>
+						<input formControlName="confirm_password" type="password" class="validate" required>				
+						
+						<div *ngIf="usernameForm.controls.confirm_password.errors">
+							<small style="color:red;">Required *</small>
+						</div>
+						<div *ngIf="usernameForm.controls.confirm_password.pattern">
+							<small style="color:red;">password must be at least 6 up to 40 characters and include at least one character and one digit!</small>
+						</div>
+						
+					</div>
+				</div>
+				<div class="row">
+					<div class="col m12">
+						<button type="submit" [disabled]="!usernameForm.valid" class="waves-effect waves-light btn" [ngClass]="{'btn-red': !usernameForm.valid }" >save change</button>&nbsp;&nbsp;
+						<button (click)="cancel()" class="waves-effect waves-light btn orange">cancel</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

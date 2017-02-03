@@ -1,0 +1,31 @@
+	<!-- Browse City-->
+			<div class="row" ng-controller="cityCtrl">
+				<div class="col m12">
+					<h5>Browse by City</h5>
+					<div class="divider"></div>
+					  <div class="section">
+						<div class="row footer-text">
+							<div class="col m3">
+								<ul *ngFor="let city of cities">
+									<li><a href="#" routerLink="/city/products">{{city.name}}</a></li>
+								</ul>
+							</div>
+							<div class="col m3">
+								<ul *ngFor="let city of cities">
+									<li><a href="#" routerLink="/city/products"> {{city.name}}</a></li>
+								</ul>
+							</div>
+							<div class="col m3">
+								<ul *ngFor="let city of cities">
+									<li><a href="#" routerLink="/city/products">{{city.name}}</a></li>
+								</ul>
+							</div>
+							<div class="col m3">
+								<ul *ngFor="let city of cities">
+									<li><a href="#" routerLink="/city/products">{{city.name}}</a></li>
+								</ul>
+							</div>
+						</div>
+					  </div>
+				</div>
+			</div>

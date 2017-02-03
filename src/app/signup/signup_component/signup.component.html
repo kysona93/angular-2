@@ -1,0 +1,78 @@
+<div class="col m5">
+	<div class="row">  
+		<div class="col m12">
+			<h5 class="caption"> Sign Up </h5>
+			<div class="divider"></div>
+			<form novalidate [formGroup]="signupForm" (submit)="signUp()">
+				<div class="input-field">
+					<input formControlName= "firstname" type="text" class="validate" required>
+					<label for="firstname">First Name</label>
+					<div *ngIf="signupForm.controls.firstname.errors" >
+						<small style="color:red">Required *</small>
+					</div>
+					<div *ngIf="signupForm.controls.firstname.pattern" >
+						<small style="color:red">first name can be only characters and at least 2 characters up to 40 characters!</small>
+					</div> 
+				</div>
+				<div class="input-field">
+					<input formControlName= "lastname" type="text" class="validate" required>
+					<label for="lastname">Last Name</label>
+					<div *ngIf="signupForm.controls.lastname.errors" >
+						<small style="color:red">Required *</small>
+					</div>
+					<div *ngIf="signupForm.controls.lastname.pattern" >
+						<small style="color:red">last name can be only characters and at least 2 characters up to 40 characters!</small>
+					</div>
+					
+				</div>
+				<div class="input-field">
+					<input  formControlName="email" type="email" class="validate" required>
+					<label for="email">Email</label>
+					<div *ngIf="signupForm.controls.email.errors" >
+						<small style="color:red">Required *</small>
+					</div>
+					<div *ngIf="signupForm.controls.email.pattern" >
+						<small style="color:red">invalid email!</small>
+					</div>
+					
+				</div>
+				<div class="input-field">
+					<input  formControlName="password" type="password" class="validate" required>
+					<label for="password">Password</label>
+					
+					<div *ngIf="signupForm.controls.password.errors" >
+						<small style="color:red">Required *</small>
+					</div>
+					<div *ngIf="signupForm.controls.password.pattern" >
+						<small style="color:red">password must be at least 6 up to 40 characters and include at least one character and one digit!</small>
+					</div>
+					
+				</div>
+				<div class="input-field">
+					<input  formControlName="confirm_password" type="password" class="validate" required>
+					<label for="confirm_password">Confirm Password</label>
+					
+					<div *ngIf="signupForm.controls.confirm_password.errors" >
+						<small style="color:red">password miss match!</small>
+					</div>
+					<div *ngIf="signupForm.controls.confirm_password.pattern" >
+						<small style="color:red">password must be at least 6 up to 40 characters and include at least one character and one digit!</small>
+					</div>
+					
+				</div>
+				<!-- Keep me sign in this computer -->
+				<p>
+					<input type="checkbox" class="filled-in" id="ckkeepme" (change)="checkKeepMe()" checked="checked"/>
+					<label for="ckkeepme">Keep me signed in on this computer</label>
+				</p>
+				<!-- Agreement -->
+				<p>
+					<input type="checkbox" class="filled-in" id="ckagreement" (change)="checkAgreement()" required/>
+					<label for="ckagreement">I agree to the <a href="#">Term of Use</a> and <a href="#">Privacy Statement</a></label>
+				</p>
+				<!-- <h6 [hidden]="agreement"><small style="color:red">{{agreement_info}}</small></h6> -->
+				<button type="submit" [disabled]="!signupForm.valid" class="waves-effect waves-light btn" [ngClass]="{'btn-red': !signupForm.valid }" >Sign Up</button>
+			</form>
+		</div>
+	</div>
+</div>

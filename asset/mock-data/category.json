@@ -1,0 +1,22 @@
+[
+	{
+		"link":"page/product_sub_page.html",
+		"name":"Food & Drink"
+	},
+	{
+		"link":"page/product_sub_page.html",
+		"name":"Cloth"
+	},
+	{
+		"link":"page/product_sub_page.html",
+		"name":"Restaurant"
+	},
+	{
+		"link":"page/product_sub_page.html",
+		"name":"Delivery & Service"
+	},
+	{
+		"link":"page/product_sub_page.html",
+		"name":"Tour"
+	}
+]

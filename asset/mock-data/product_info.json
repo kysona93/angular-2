@@ -1,0 +1,18 @@
+[
+	{"pro_id":1,"link":"page/product_detail_page.html","title":"Blance & Eclare","location":"Chigago","date":"Sale End:01-july",
+						"discount":"50%","discount_price":"$100","price":"$50"},
+	{"pro_id":2,"link":"page/product_detail_page.html","title":"Blance & Eclare","location":"Chigago","date":"Sale End:01-july",
+						"discount":"50%","discount_price":"$100","price":"$50"},
+	{"pro_id":3,"link":"page/product_detail_page.html","title":"Blance & Eclare","location":"Chigago","date":"Sale End:01-july",
+						"discount":"50%","discount_price":"$100","price":"$50"},
+	{"pro_id":4,"link":"page/product_detail_page.html","title":"Blance & Eclare","location":"Chigago","date":"Sale End:01-july",
+						"discount":"50%","discount_price":"$100","price":"$50"},
+	{"pro_id":5,"link":"page/product_detail_page.html","title":"Blance & Eclare","location":"Chigago","date":"Sale End:01-july",
+						"discount":"50%","discount_price":"$100","price":"$50"},
+	{"pro_id":6,"link":"page/product_detail_page.html","title":"Blance & Eclare","location":"Chigago","date":"Sale End:01-july",
+						"discount":"50%","discount_price":"$100","price":"$50"},
+	{"pro_id":7,"link":"page/product_detail_page.html","title":"Blance & Eclare","location":"Chigago","date":"Sale End:01-july",
+						"discount":"50%","discount_price":"$100","price":"$50"},
+	{"pro_id":8,"link":"page/product_detail_page.html","title":"Blance & Eclare","location":"Chigago","date":"Sale End:01-july",
+						"discount":"50%","discount_price":"$100","price":"$50"}
+					   ]

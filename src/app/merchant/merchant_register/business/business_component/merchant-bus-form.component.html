@@ -1,0 +1,108 @@
+<div class="row">
+    <div class="col m12">
+        <div>
+            <h4>Tell us about your business</h4>
+        </div>
+    </div>
+</div>
+<form novalidate [formGroup]="businessForm" (submit)="doBusiness()">
+      <div class="row">
+        <div class="col m12">
+            <div class="row">
+              <div class="input-field col m6">
+                <label for="first_name">Business Name</label> <br/>
+                <input formControlName="business_name" type="text" class="validate">
+               
+                <div *ngIf="businessForm.controls.business_name.errors" ><small style="color:red">Required *</small></div>
+                <div *ngIf="businessForm.controls.business_name.pattern" >
+                  <small style="color:red">Business name can be only characters and at least 2 to 100 characters.</small>
+                </div>
+                
+              </div>
+              <div class="input-field col m6">
+                  <label for="first_name">Business Phone</label> <br/>
+                  <input formControlName="business_phone" type="text" class="validate">
+                 
+                  <div *ngIf="businessForm.controls.business_phone.errors" ><small style="color:red">Required *</small></div>
+                  <div *ngIf="businessForm.controls.business_phone.pattern" >
+                    <small style="color:red">invalid phone number</small>
+                  </div>
+                  
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col m12">
+            <div class="row">
+              <div class="input-field col m6">
+                <label for="first_name">Business Email</label> <br/>
+                <input formControlName="business_email" type="email" class="validate">
+                
+                  <div *ngIf="businessForm.controls.business_email.errors" ><small style="color:red">Required *</small></div>
+                  <div *ngIf="businessForm.controls.business_email.pattern" >
+                    <small style="color:red">invalid email</small>
+                  </div>
+                  
+              </div>
+              <div class="input-field col m6">
+                  <label for="first_name">Business Zip Code</label> <br/>
+                  <input formControlName="business_zipcode" type="text" class="validate">
+                  
+                  <div *ngIf="businessForm.controls.business_zipcode.errors" ><small style="color:red">Required *</small></div>
+                  <div *ngIf="businessForm.controls.business_zipcode.pattern" >
+                    <small style="color:red">Zip code can be only numeric.</small>
+                  </div>
+                  
+              </div>
+            </div>        
+        </div>
+      </div>
+      <div class="row">
+        <div class="col m12">        
+            <div class="row">
+              <div class="input-field col m6">
+                <label>First Name</label> <br/>
+                <input formControlName="firstname" type="text" class="validate">
+                
+                  <div *ngIf="businessForm.controls.firstname.errors" ><small style="color:red">Required *</small></div>
+                  <div *ngIf="businessForm.controls.firstname.pattern" >
+                    <small style="color:red">First name can be only characters.</small>
+                  </div>
+                
+              </div>
+              <div class="input-field col m6">
+                  <label>Last Name</label> <br/>
+                  <input formControlName="lastname" type="text" class="validate">
+                  
+                  <div *ngIf="businessForm.controls.lastname.errors" ><small style="color:red">Required *</small></div>
+                  <div *ngIf="businessForm.controls.lastname.pattern" >
+                    <small style="color:red">Lastname canbe only characters.</small>
+                  </div>
+                  
+              </div>
+            </div>  
+        </div>
+      </div>
+      <div class="row">
+        <div class="col m12">
+            <div class="row">
+              <div class="input-field col m6">
+                <select class="browser-default" formControlName="typebusiness">
+                  <option value="" disabled selected>Type of Business</option>
+                  <option value="Product">Products</option>
+                  <option value="Service">Service</option>
+                  <option value="Tour">Tour</option>
+                  <option value="Restuarant">Restuarant</option>
+                  <option value="Health and Fitness">Health and Fitness</option>
+                </select>
+              </div>
+              <div class="input-field col m6">
+              </div>
+            </div>
+            <div>  
+                <button type="submit" [disabled]="!businessForm.valid" [ngClass]="{'btn-red': !businessForm.valid }" class="waves-effect waves-light btn">continue</button>&nbsp;&nbsp;
+            </div>
+        </div>
+      </div>
+      </form>

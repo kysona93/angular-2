@@ -1,0 +1,14 @@
+<!-- Slide Bar -->
+<div class="container" ng-controller="slideCtrl">
+	<div class="slider" style="z-index:0">
+		<ul class="slides">
+			<li *ngFor="let slide of sliders">
+				<img src="http://placehold.it/800x500"> 
+				<div class="caption center-align">
+					<h3>{{slide.title}}</h3>
+					<h5 class="light grey-text text-lighten-3">{{slide.desc}}</h5>
+				</div>
+			</li>
+		</ul>
+	</div> 
+</div>

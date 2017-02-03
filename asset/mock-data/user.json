@@ -1,0 +1,5 @@
+[
+	{"id":1,"firstname":"user","lastname":"user","email":"user@gmail.com","password":"s12345"},
+	{"id":2,"firstname":"merchant","lastname":"merchant","email":"merchant@gmail.com","password":"s12345"},
+	{"id":3,"firstname":"admin","lastname":"admin","email":"admin@gmail.com","password":"s12345"}
+]

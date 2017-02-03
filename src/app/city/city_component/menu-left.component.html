@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col m12">
+    <br/>
+    <b><i class="fa fa-list-alt" aria-hidden="true" style="color:#fbb602"></i>&nbsp;Interested Category</b>
+
+    <div class="collection">
+      <a href="#!" class="collection-item" *ngFor="let category of categories">{{category.name}}<span class="badge green searching">100</span></a>
+    </div>
+  </div>
+</div>
+
+<b><i class="fa fa-money" aria-hidden="true" style="color:#fbb602"></i>&nbsp; Price Range</b>
+
+<div class="divider"></div>
+
+<div class="row">
+  <div class="input-field col m4">
+    <input placeholder="$ min" id="first_name" type="text" class="validate">
+  </div>
+  <div class="input-field col m4">
+    <input placeholder="$ max" id="first_name" type="text" class="validate">
+  </div>
+  <div class="col m4">
+    <br/>
+    <a class="btn-floating orange" ><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+  </div>
+</div>
+<br/>
